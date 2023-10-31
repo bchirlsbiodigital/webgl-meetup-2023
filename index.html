@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BioDigital Plasma Engine (Brian Chirls)</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<style type="text/css">
+			@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+			@import url(//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+			@import url(//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+			body {
+				font-family: 'Droid Serif';
+		        text-shadow: 0 0 20px #333;
+			}
+			.remark-slide-content {
+				background-color: #272822;
+				color: #cccccc;
+			}
+			h1, h2, h3 {
+				font-family: 'Yanone Kaffeesatz';
+				font-weight: normal;
+				color: #f3f3f3;
+				line-height: 0.8em;
+			}
+			.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+			div.remark-slide-content > ul > li {
+				font-size: 2em;
+				margin: 0.3em 0;
+			}
+
+			div.remark-slide-content > ul > li > ul > li {
+				font-size: 0.7em;
+			}
+
+			.smaller > ul {
+				font-size: 0.7em;
+			}
+
+			a, a:visited {
+				color: #d7d7d7;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="//gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+		<!--
+		<script>
+		if (!window.remark) {
+			document.write('<script ' + 'src="js/remark-latest.min.js"><' + '/script>');
+		}
+		</script>
+		-->
+		<script>
+			var slideshow = remark.create({
+				ratio: '16:9',
+				sourceUrl: 'readme.md'
+			});
+			var fsNames = [
+				'requestFullscreen',
+				'mozRequestFullScreen',
+				'msRequestFullscreen',
+				'webkitRequestFullscreen'
+			];
+			function fs() {
+				var i;
+				for (i = 0; i < fsNames.length; i++) {
+					if (document.body[fsNames[i]]) {
+						document.body[fsNames[i]]();
+						return;
+					}
+				}
+			}
+			document.body.addEventListener('dblclick', fs, false);
+		</script>
+	</body>
+</html>
